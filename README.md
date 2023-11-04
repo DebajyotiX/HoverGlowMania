@@ -45,11 +45,15 @@ Open your web browser and go to `http://localhost:3000 `to see the Babylon.js pr
 ## Project Structure
 
 `main.js` creates scene, implements the features in the requirement
+
 `src/` contains the source code of js functions used by main.js
+
 `package.json` lists the project dependencies and scripts.
+
 `asset/` contains font file
 
 `meshHighlight.fragment.fx` Contains the fragment shader that outlines. It uses fresnel effect, and calculates whether the pixel's world-normal is at a grazing angle from the camera. If its within a certain threshold, it colours it differently than the rest of the material. It also tweaks the z-buffer for that pixel, so that it renders infront of everyting else. 
+
 `phong.fragment.fx` A custom phong shader, that emulates a light source. its the default shader when objects are not highlighted.
 
 ## Troubleshooting
