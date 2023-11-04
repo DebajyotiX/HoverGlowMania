@@ -37,8 +37,9 @@ Start the development server using the following command:
 npm run dev  
 ```
 
-Once the development server is set up, node will host the project in a port in your own local machine. It will provide a http link, for example `http://localhost:3000`
-Open your web browser and go to `http://localhost:3000 `to see the Babylon.js project in action!
+Once the development server is set up, node will host the project in a port in your own local machine. It will provide a http link, for example `http://localhost:8000` or `http://localhost:5170`.
+
+Open your web browser and go to respective `http://localhost:XXXX `to see the Babylon.js project in action!
 
   
 
