@@ -44,10 +44,14 @@ Open your web browser and go to `http://localhost:3000 `to see the Babylon.js pr
 
 ## Project Structure
 
-`src/` contains the project source code
+`main.js` creates scene, implements the features in the requirement
+`src/` contains the source code of js functions used by main.js
 `package.json` lists the project dependencies and scripts.
+`asset/` contains font file
 
-  
+`meshHighlight.fragment.fx` Contains the fragment shader that outlines. It uses fresnel effect, and calculates whether the pixel's world-normal is at a grazing angle from the camera. If its within a certain threshold, it colours it differently than the rest of the material. It also tweaks the z-buffer for that pixel, so that it renders infront of everyting else. 
+`phong.fragment.fx` A custom phong shader, that emulates a light source. its the default shader when objects are not highlighted.
+
 ## Troubleshooting
 
 If you encounter any issues while setting up or running the project, please check the following:
@@ -57,7 +61,14 @@ If you encounter any issues while setting up or running the project, please chec
 
 
 
-## License
-This project is licensed under the MIT License. You are free to use and modify it as you see fit.
+## Ideas
+Babylon JS Library Implementation of outline is pretty good. 
+1. add object to Highlight Layer -> OutlineRenderer
+
+
+#### Some Interesting Alternative Algorithms
+1. Reverse Hull Method(requires building a custom mesh modifier, similar to Blender's Solidify Modifier, that adds thickness to meshes). seems , there is no built in features in BablylonJS like that; so it requires creating one, with low-level advanced features of BabylonJS
+2. Flood Fill algorithm(similar to fill color feature of MS Paint) (GPU Silhouette Rendering, computationally expensive)
+3. Clone-Blur-mask method(requires post processing and re-renders)
 
 Happy coding!💻
