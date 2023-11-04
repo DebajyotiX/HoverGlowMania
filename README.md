@@ -2,7 +2,7 @@
 
 
 Welcome to my Babylon.js project! This project showcases the power of Babylon.js for creating stunning 3D experiences(esp with custom shaders). With node as our local development server, you can easily get started and run this project on your own machine.
-![Screenshot](./asset/screenshot.png)
+![Screenshot](./asset/smallScreenShot.png)
 
 ## Getting Started
 
