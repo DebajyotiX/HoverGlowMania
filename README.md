@@ -60,4 +60,4 @@ If you encounter any issues while setting up or running the project, please chec
 ## License
 This project is licensed under the MIT License. You are free to use and modify it as you see fit.
 
-Happy coding!
+Happy coding!💻
