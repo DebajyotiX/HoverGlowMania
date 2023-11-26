@@ -14,11 +14,13 @@ varying vec3 vNormal;
 
 
 void main(void) {
-    vec4 outPosition = worldViewProjection * vec4(position, 1.0);
-    gl_Position = outPosition;
+    vec3 newPosition = position;
 
-    vPositionW = vec3(world * vec4(position, 1.0));
+    vec4 outPosition = worldViewProjection * vec4(newPosition, 1.0);
+    gl_Position = outPosition;
     vNormalW = normalize(vec3(world * vec4(normal, 0.0)));
-    vPosition = position;
+    vPositionW = vec3(world * vec4(newPosition, 1.0));
+
+    vPosition = newPosition;
     vNormal = normal;
 }

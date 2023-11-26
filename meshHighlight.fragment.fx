@@ -34,7 +34,8 @@ void main(void) {
     vec3 angleW = normalize(viewDirectionW + lightVectorW);
     float specComp = max(0., dot(vNormalW, angleW));
     specComp = pow(specComp, max(1., 64.)) * 2.;
-
+    gl_FragColor = vec4(color * ndl + vec3(specComp), 1.);
+    
     // ---- Highlight ------------------
 
     // Fresnel

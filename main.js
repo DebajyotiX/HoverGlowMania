@@ -4,6 +4,7 @@ import { pickMousePointerObjects } from './src/pickMousePointerObjects';
 import { setHoverEffect } from './src/sethoverEffect';
 import { setHighlightColor, setHighlightWidth } from './src/userInputValueSetter';
 import { hexToRGB } from './src/hexToRGB';
+// import { Inspector } from '@babylonjs/inspector';
 
 //------------Babylon BoilerPlate---------------
 
@@ -19,15 +20,17 @@ const baseShaderMaterial = new BABYLON.ShaderMaterial("shader", scene, "./phongS
     attributes: ["position", "normal", "uv"],
     uniforms: ["world", "worldView", "worldViewProjection", "view", "projection", "cameraPosition"],
 });
+baseShaderMaterial.backFaceCulling = true;
 
 const shaderMaterial = new BABYLON.ShaderMaterial("shader", scene, "./meshHighlight", {
     attributes: ["position", "normal", "uv"],
     uniforms: ["world", "worldView", "worldViewProjection", "view", "projection", "cameraPosition"],
 });
+shaderMaterial.backFaceCulling = true;
 
 shaderMaterial.setVector3(
     "highLightColor",
-    new BABYLON.Vector3(0.5, 0., 1.)
+    new BABYLON.Vector3(0.56, 1.0, 0.66)
 );
 
 shaderMaterial.setFloat(
@@ -52,3 +55,5 @@ engine.runRenderLoop(function () {
     previouslyHoveredObject = setHoverEffect(previouslyHoveredObject, currentlyHoveredObject, baseShaderMaterial, shaderMaterial);
     scene.render();
 });
+
+// Inspector.Show(scene, {});
