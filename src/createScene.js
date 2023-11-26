@@ -36,12 +36,12 @@ function createScene(canvas, engine) {
 
 
     BABYLON.SceneLoader.ImportMesh("", "../asset/", "monkeyAsset.obj", scene, function (meshes) {
-        console.log("toy loaded");
+
+        // Warning🔴: Dont forget to set material to "baseShaderMaterial" in callback, while importing a mesh.
         meshes[0].material = baseShaderMaterial;
+
         meshes[0].scaling = new BABYLON.Vector3(0.5, 0.5, 0.5);
         meshes[0].rotation.y = Math.PI; 
-
-
         // meshes[0].flipFaces(true); // for inverted Mesh
     });
 
